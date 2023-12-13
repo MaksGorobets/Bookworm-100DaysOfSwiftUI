@@ -15,6 +15,7 @@
 		E9765F972B28C2FD005BBA80 /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9765F962B28C2FD005BBA80 /* AddBookView.swift */; };
 		E9765F992B28D4ED005BBA80 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9765F982B28D4ED005BBA80 /* RatingView.swift */; };
 		E9765F9B2B28E181005BBA80 /* EmojiRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9765F9A2B28E181005BBA80 /* EmojiRatingView.swift */; };
+		E9B7FBC52B2A345200E176A2 /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B7FBC42B2A345200E176A2 /* BookDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		E9765F962B28C2FD005BBA80 /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
 		E9765F982B28D4ED005BBA80 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		E9765F9A2B28E181005BBA80 /* EmojiRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiRatingView.swift; sourceTree = "<group>"; };
+		E9B7FBC42B2A345200E176A2 /* BookDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				E9765F982B28D4ED005BBA80 /* RatingView.swift */,
 				E9765F962B28C2FD005BBA80 /* AddBookView.swift */,
 				E93EED3F2B2754C700B69330 /* BookwormApp.swift */,
+				E9B7FBC42B2A345200E176A2 /* BookDetailView.swift */,
 				E93EED412B2754C700B69330 /* ContentView.swift */,
 				E9765F9A2B28E181005BBA80 /* EmojiRatingView.swift */,
 				E9765F942B28C1A3005BBA80 /* Book.swift */,
@@ -155,6 +158,7 @@
 				E9765F992B28D4ED005BBA80 /* RatingView.swift in Sources */,
 				E9765F9B2B28E181005BBA80 /* EmojiRatingView.swift in Sources */,
 				E9765F972B28C2FD005BBA80 /* AddBookView.swift in Sources */,
+				E9B7FBC52B2A345200E176A2 /* BookDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
