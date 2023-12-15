@@ -37,10 +37,13 @@ struct BookDetailView: View {
             Text("Review:")
             Text(book.review)
             Divider()
-            RatingView(rating: .constant(book.rating)/*, offColor: isLowRating() ?? .yellow, onColor: isLowRating() ?? .orange*/)
+            RatingView(rating: .constant(book.rating))
                 .font(.system(size: 30))
                 .padding()
             Divider()
+            Text(book.formattedDate)
+                .padding()
+                .foregroundStyle(.secondary)
         }
         .toolbar {
             Button("Delete this book", systemImage: "trash") {
@@ -54,10 +57,6 @@ struct BookDetailView: View {
         .navigationTitle(book.title)
         .navigationBarTitleDisplayMode(.inline)
     }
-    
-//    func isLowRating() -> Color? {
-//        book.rating == 1 ? .red : nil
-//    }
     
     func deleteCurrent() {
         modelContext.delete(book)

@@ -37,6 +37,14 @@ class Book {
     var genre: String
     var review: String
     var rating: Int
+    let date = Date()
+    
+    var formattedDate: String {
+        var formatter = DateFormatter()
+        formatter.dateFormat = "EEEE, MMM d, yyyy"
+        
+        return formatter.string(from: date)
+    }
     
     init(title: String, author: String, genre: String, review: String, rating: Int) throws {
         guard title != "" else { throw ErrorChecker.emptyTitle }
