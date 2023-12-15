@@ -10,12 +10,12 @@ import SwiftUI
 struct RatingView: View {
     
     @Binding var rating: Int
-    let maximumRating: Int = 5
-    let offColor: Color = .yellow
-    let onColor: Color = .orange
+    var maximumRating: Int = 5
+    @State var offColor: Color = .yellow
+    @State var onColor: Color = .orange
     
-    let filledImage: String = "star.fill"
-    let image: String = "star"
+    var filledImage: String = "star.fill"
+    var image: String = "star"
     
     var body: some View {
         HStack {
@@ -34,10 +34,18 @@ struct RatingView: View {
     }
     
     func params(number: Int) -> (String, Color) {
-        if number >= rating {
-            return (image, offColor)
+        if rating != 1 {
+            if number >= rating {
+                return (image, offColor)
+            } else {
+                return (filledImage, onColor)
+            }
         } else {
-            return (filledImage, onColor)
+            if number >= rating {
+                return (image, .pink)
+            } else {
+                return (filledImage, .red)
+            }
         }
     }
     

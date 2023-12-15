@@ -37,7 +37,7 @@ struct BookDetailView: View {
             Text("Review:")
             Text(book.review)
             Divider()
-            RatingView(rating: .constant(book.rating))
+            RatingView(rating: .constant(book.rating)/*, offColor: isLowRating() ?? .yellow, onColor: isLowRating() ?? .orange*/)
                 .font(.system(size: 30))
                 .padding()
             Divider()
@@ -55,6 +55,10 @@ struct BookDetailView: View {
         .navigationBarTitleDisplayMode(.inline)
     }
     
+//    func isLowRating() -> Color? {
+//        book.rating == 1 ? .red : nil
+//    }
+    
     func deleteCurrent() {
         modelContext.delete(book)
         dismiss()
@@ -66,7 +70,7 @@ struct BookDetailView: View {
     do {
         let config = ModelConfiguration(isStoredInMemoryOnly: true)
         let container = try ModelContainer(for: Book.self, configurations: config)
-        let book = Book(title: "Example Book", author: "Example Author", genre: "Fantasy", review: "This is such a great book", rating: 4)
+        let book = try! Book(title: "Example Book", author: "Example Author", genre: "Fantasy", review: "This is such a great book", rating: 4)
         return BookDetailView(book: book)
             .modelContainer(container)
     } catch {

@@ -26,6 +26,7 @@ struct ContentView: View {
                             VStack(alignment: .leading) {
                                 Text(book.title)
                                     .font(.headline)
+                                    .foregroundStyle(isLowRating(book: book))
                                 Text(book.author)
                                     .font(.subheadline)
                                     .foregroundStyle(.secondary)
@@ -55,6 +56,10 @@ struct ContentView: View {
             }
             .navigationTitle("Bookworm")
         }
+    }
+    
+    func isLowRating(book: Book) -> Color {
+        book.rating == 1 ? .red : .primary
     }
     
     func removeItem(at offsets: IndexSet) {

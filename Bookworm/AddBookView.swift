@@ -17,6 +17,9 @@ struct AddBookView: View {
     @State private var review = ""
     @State private var rating = 3
     
+    @State private var isShowingAlert = false
+    @State private var alertMessage = ""
+    
     let genres = ["Fantasy", "Horror", "Kids", "Mystery", "Poetry", "Romance", "Thriller"]
     
     var body: some View {
@@ -35,11 +38,17 @@ struct AddBookView: View {
                     TextEditor(text: $review)
                 }
                 Button("Save") {
-                    let newBook = Book(title: title, author: author, genre: genre, review: review, rating: rating)
-                    modelContext.insert(newBook)
-                    dismiss()
+                    do {
+                        let newBook = try Book(title: title, author: author, genre: genre, review: review, rating: rating)
+                        modelContext.insert(newBook)
+                        dismiss()
+                    } catch {
+                        alertMessage = error.localizedDescription
+                        isShowingAlert = true
+                    }
                 }
             }
+            .alert(alertMessage, isPresented: $isShowingAlert) { }
             .navigationTitle("Add book")
             .navigationBarTitleDisplayMode(.inline)
         }
